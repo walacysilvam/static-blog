@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}        
+{% if articles %}
+    <h2>Todos os Post</h2>
+    {% for article in articles %}        
+           <ul class="allposts">
+                <li><a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title}}</a><span class="postdata">{{ article.locale_date }}</span></li>
+           </ul>
+    {% endfor %}
+{% else %}
+    No posts found.
+{% endif %}
+{% endblock content %}
